@@ -1,11 +1,12 @@
 import express from "express";
 import 'dotenv/config.js';
 import StudentRoutes from "./routers/StudentRoutes.js";
+import bookRoutes from "./routers/BookRoutes.js";
 
 // init app
 const app = express();
 
-const port = 3000;
+const port = 4000;
 
 // middleware
 app.use(express.json());
@@ -19,4 +20,5 @@ try{
     console.log(e);
 }
 
-app.use('/Student', StudentRoutes);
+app.use('/student', StudentRoutes);
+app.use('/book', bookRoutes);
